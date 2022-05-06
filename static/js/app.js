@@ -130,7 +130,7 @@ function bubbleChart() {
             opacity: 0.6,
             size: sampleValues,
             line: {
-                color: 'rgb(128,0,128)',
+                color: 'rgb(179,154,54)',
                 width: 1,
             } 
         }
