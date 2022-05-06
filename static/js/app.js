@@ -1,6 +1,6 @@
 // STEP ONE 
 // Use D3 to read in samples.json
-var pathSamples = `https://github.com/Peteresis/Belly_Button_Biodiversity/blob/main/static/data/samples.json`;
+var pathSamples = `https://peteresis.github.io/plotlydiploy/static/data/samples.json`;
 var dataDB;
 
 // Fetch json file using D3 to test in local machine
