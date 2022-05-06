@@ -66,9 +66,9 @@ function gaugeChart(value) {
         shapes: [{
             type: "path",
             path: path,
-            fillcolor: "red",
+            fillcolor: "black",
             line: {
-                color: "red",
+                color: "black",
             }
         }],
         title: "Belly Button Washing Frequency <br>Scrubs per Week",
