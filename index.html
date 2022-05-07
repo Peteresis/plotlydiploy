@@ -1,73 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Bellybutton Biodiversity</title>
+<body style="background-color:#eae3c7;">
 
-  <!-- Bootstrap CSS --> 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <link rel="stylesheet" href="static/css/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bellybutton Biodiversity</title>
 
-<body>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/style.css">
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 jumbotron text-center hero">
-        <h1 id="dashboard_title">Belly Button Biodiversity Dashboard</h1>
-        <p id="dashboard_p">Use the interactive charts below to explore the dataset</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-2">
-        <div class="well">
-          <h5>Test Subject ID No.:</h5>
-          <select id="selDataset" name="selDataset" onchange="optionChanged(this.value)">
-            <!-- <option selected></option> -->
-          </select>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 jumbotron text-center hero">
+          <h1 id="dashboard_title">Belly Button Biodiversity Dashboard</h1>
+          <p id="dashboard_p">Use the interactive charts below to explore the dataset</p>
         </div>
-        <div id="demo_info" class="panel" class="col-md-2">
-          <div class="panel-heading">
-            <h5 class="panel-title">Demographic Info</h3>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <div class="well">
+            <h5>Test Subject ID No.:</h5>
+            <select id="selDataset" name="selDataset" onchange="optionChanged(this.value)">
+              <!-- <option selected></option> -->
+            </select>
           </div>
-          <div id="sample-metadata" class="panel-body"></div>
+          <div id="demo_info" class="panel" class="col-md-2">
+            <div class="panel-heading">
+              <h5 class="panel-title">Demographic Info</h3>
+            </div>
+            <div id="sample-metadata" class="panel-body"></div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div id="bar">
+          </div>
+          <p align="justify">This barchart shows the top 10 Operational Taxonomic Units,
+            also known as OTUs, present in the test sample of the individual
+            selected in the Test SUbject ID Number menu.
+
+            Nowadays, however, the term "OTU" is commonly used in a different context
+            and refers to clusters of (uncultivated or unknown) organisms,
+            grouped by DNA sequence similarity of a specific taxonomic marker gene
+            (originally coined as mOTU; molecular OTU). In other words, OTUs are pragmatic
+            proxies for "species" (microbial or metazoan) at different taxonomic levels,
+            in the absence of traditional systems of biological classification as are available for macroscopic
+            organisms.</p>
+        </div>
+        <div class="col-md-5">
+          <div id="gauge">
+          </div>
+          <p align="justify">This is called a "Gauge Chart", also known as dial charts or speedometer charts.
+            It uses needles to show information as a reading on a dial. On a gauge chart,
+            the value for each needle is read against the colored data range or chart axis.
+
+            In this case the gauge points the number of times per week that the selected individual washed
+            the belly button. Not surprisingly, the diversity of bacterial flora is much bigger
+            for indivuduals with low washing frequency.</p>
         </div>
       </div>
-      <div class="col-md-5">
-        <div id="bar">
+      <div class="row">
+        <div class="col-md-12">
+          <div id="bubble">
+          </div>
+          <p align="justify">A bubble chart is a data visualization that displays multiple circles (bubbles)
+            in a two-dimensional plot. It is a generalization of the scatter plot, replacing the dots with bubbles.
+            Most commonly, a bubble chart displays the values of three numeric variables, where each observation's data
+            is shown by a circle ("bubble"), while the horizontal and vertical positions of the bubble show the values
+            of two other variables.
+
+            In the bubble chart above, the diameter of each bubble represents the amount of each OTU ID (type of
+            bacteria) present in the sample,
+            the color indicates the type of OTU ID.</p>
         </div>
+        <hr width="70%" size="20" align="center">
+        <font size="+2">
+          <footer>
+
+            <p align="justify">If you're interested in the topic of human body biodiversity, here's a good read.<br>
+              <h3>Author: The Public Science Lab   → <a href="http://robdunnlab.com/projects/belly-button-biodiversity/">Belly Button Biodiversity</a></h3>
+            </p>
+          </footer>
+        </font>
       </div>
-      <div class="col-md-5">
-        <div id="gauge">
-        </div>
-      </div>
+
+
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div id="bubble">
-        </div>
-      </div>
-    </div>
 
-        
-  </div>
 
-<!-- Bringing in Javascript to enable components in bootstrap -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
-<script src="https://kit.fontawesome.com/231099ded4.js" crossorigin="anonymous">SameSite=None; Secure</script>
 
-<!-- Bring in D3, Plotly and custom app -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<script src="https://peteresis.github.io/plotlydiploy/static/js/app.js" type="text/javascript"></script>
-<script src="https://peteresis.github.io/plotlydiploy/static/js/bonus.js" type="text/javascript"></script>
-  
-</body>
+
+    <!-- Bringing in Javascript to enable components in bootstrap -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"
+      integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
+      crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/231099ded4.js" crossorigin="anonymous">SameSite = None; Secure</script>
+
+    <!-- Bring in D3, Plotly and custom app -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://peteresis.github.io/plotlydiploy/static/js/app.js" type="text/javascript"></script>
+    <script src="https://peteresis.github.io/plotlydiploy/static/js/bonus.js" type="text/javascript"></script>
+
+
+
+
+  </body>
 
 </html>
